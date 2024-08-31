@@ -2,7 +2,6 @@
 # John Kowal  -  WALTER$
 
 import string
-import re
 
 def word_frequencies(filename):
     # Initialize an empty dictionary to store word counts
@@ -14,9 +13,8 @@ def word_frequencies(filename):
         content = file.read()
 
         # Create a translation table to remove punctuation
-        
+        content = content.replace('-', ' ')
         content = content.translate(str.maketrans('', '', string.punctuation))
-#       content = re.sub(f"[{string.punctuation}]+", ' ', content)
 
         # Split into words and convert to lowercase
         words = content.lower().split()
