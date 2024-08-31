@@ -47,7 +47,8 @@ def print_map_by_value(freq_word):
         print(f"{freq:2d} {word}")
 
 def main():
-    print_map_by_value(word_frequencies("turing.txt"))
+    filename = "turing.txt"
+    print_map_by_value(word_frequencies(filenameg))
 
 if __name__ == "__main__":
     main()
