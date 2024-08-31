@@ -14,8 +14,9 @@ def word_frequencies(filename):
         content = file.read()
 
         # Create a translation table to remove punctuation
-        translator = str.maketrans('', '', string.punctuation)
-        content = re.sub(f"[{string.punctuation}]+", ' ', content)
+        
+        content = content.translate(str.maketrans('', '', string.punctuation))
+#       content = re.sub(f"[{string.punctuation}]+", ' ', content)
 
         # Split into words and convert to lowercase
         words = content.lower().split()
