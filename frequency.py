@@ -12,8 +12,10 @@ def word_frequencies(filename):
         # Read the entire file content
         content = file.read()
 
+        # Replace hyphens and em/en dashes with spaces
+        content = content.replace('-', ' ').replace('–', ' ').replace('—', ' ')
+
         # Create a translation table to remove punctuation
-        content = content.replace('-', ' ')
         content = content.translate(str.maketrans('', '', string.punctuation))
 
         # Split into words and convert to lowercase
